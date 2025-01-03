@@ -1,6 +1,12 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import axios from 'axios';
 function AwardList() {
+
+  useEffect( async()=>{
+    const awards = await axios.get("localhost:27017:api/awards")
+    console.log(awards.data)
+  })
+
   return (
     <div>
         <div className="award-card" id="award-2">

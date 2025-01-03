@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./style.css"
 function Form() {
 
@@ -6,9 +6,21 @@ function Form() {
     const [discription, setDiscription] = useState("Complete 10 workouts.")
     const [requirement, setRequirement] = useState("10")
 
-    
+    const [data, setData] = useState({title:"",discription:"",requirement:""})
+
+    useEffect(async()=>{
+      const awards = await axios.post("localhost:27017:api/awards")
+          console.log(awards.data)
+    })
+
     function handlesubmit(){
-        settitle()
+        setData({
+          ...data,
+          title:awardTitle.value,
+          discription:awardDescription.value,
+          requirement:awardRequirement.value
+        })
+        console.log(data)
     }
 
   return (
