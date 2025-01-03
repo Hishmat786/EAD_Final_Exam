@@ -1,21 +1,21 @@
 import React from 'react'
-import "./style.css"
 
-function Card() {
+function AwardList() {
   return (
-    <div className='card'>
-      <div className="award-card" id="award-1">
+    <div>
+        <div className="award-card" id="award-2">
         <span className="delete-icon">&times;</span>
-        <h3>Fitness Champion</h3>
-        <p>Complete 10 workouts.</p>
+        <h3>Coding Guru</h3>
+        <p>Solve 5 challenges.</p>
         <div className="progress-bar">
-          {/* <div className="progress" style="width: 50%;"></div> */}
+          {/* <div className="progress" style="width: 40%;"></div> */}
         </div>
         <button className="update-button">Update Progress</button>
         <button className="update-button">Edit</button>
       </div>
+      
     </div>
   )
 }
 
-export default Card
+export default AwardList

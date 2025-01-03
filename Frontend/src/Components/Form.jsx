@@ -1,5 +1,5 @@
 import React from 'react'
-import "./form.css"
+import "./style.css"
 function Form() {
 
     function handlesubmit(){
