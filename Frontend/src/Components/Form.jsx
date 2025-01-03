@@ -6,17 +6,18 @@ function Form() {
     const [discription, setDiscription] = useState("Complete 10 workouts.")
     const [requirement, setRequirement] = useState("10")
 
-    function handlesubmit(){
-        alert("submit")
-    }
     
+    function handlesubmit(){
+        settitle()
+    }
+
   return (
     <div className='form-container'>
         <h1>Add/Edit Award</h1>
         <form action="submit" onSubmit={handlesubmit} className='form'>
-        <input type="text" id="awardTitle" placeholder="Award Title" value={title}/>
-        <input type="text" id="awardDescription" placeholder="Award Description" value={discription}/>
-        <input type="text" id="awardRequirement" placeholder="Requirements (e.g., 10)" value={requirement}/>
+        <input type="text" id="awardTitle" placeholder="Award Title" value={title} onChange={()=>settitle(awardTitle.value)}/>
+        <input type="text" id="awardDescription" placeholder="Award Description" value={discription} onChange={()=>setDiscription(awardDescription.value)}/>
+        <input type="text" id="awardRequirement" placeholder="Requirements (e.g., 10)" value={requirement} onChange={()=>setRequirement(awardRequirement.value)}/>
         <button onSubmit={handlesubmit} >Submit</button>
         </form>
     </div>
